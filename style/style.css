@@ -419,7 +419,7 @@
 
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
       header { padding: 0 24px; }
       nav ul { gap: 22px; }
       .logo h1 { font-size: 1rem; }
@@ -440,22 +440,20 @@
   .service-tab {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    
-
 }
 
     
+
+    @media (max-width:600px){
+
+     .service-tab {
+        grid-template-columns: 1fr;
+    }
 
     @media (max-width: 480px) {
       nav ul li { font-size: 0.62rem; letter-spacing: 0.12em; }
     }
 
-    @media (max-width:480px){
-
-     .service-tab {
-        grid-template-columns: 1fr;
-    }
 
  
 }
