@@ -419,7 +419,7 @@
 
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       header { padding: 0 24px; }
       nav ul { gap: 22px; }
       .logo h1 { font-size: 1rem; }
