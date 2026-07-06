@@ -6,6 +6,9 @@
     <meta name="description" content="This is the official website for KAM STUDIOS.">
     <meta name="author" content="Godfred Yao Agbogah">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/testimonial.css">
+    <link rel="stylesheet" href="./style/join-us.css">
+    <link rel="stylesheet" href="./style/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,20 +16,39 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="./images/logo.webp" alt="KAM STUDIOS Logo" width="150" height="150">
-            <h1>KAM STUDIOS</h1>
-        </div>
-        <nav>
+  <div class="logo">
+    <img src="./images/logo.webp" alt="KAM STUDIOS Logo" width="150" height="150">
+    <h1>KAM STUDIOS</h1>
+  </div>
+
+        <nav class="largeNav" id="desktopNav">
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Services</li>
-                <li>Portfolio</li>
-                <li>Contact</li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Portfolio</li>
+            <li>Contact</li>
             </ul>
         </nav>
-    </header>
+
+        <!-- Hamburger button (mobile only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        </header>
+
+        <!-- Mobile nav (sits right below header) -->
+        <nav class="mobileNav" id="mobileNav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Portfolio</li>
+            <li>Contact</li>
+        </ul>
+        </nav>
 
     <section class="hero">
         <div class="hero-content">
@@ -111,28 +133,102 @@
         </div>
     </section>
 
-  <section class="about-us">
-  <div class="aboutimage1">
-    <img src="images/hero1.webp" alt="KAM Studios interior">
-  </div>
-  <div class="about-heading">
-    <p class="eyebrow">About Us</p>
-    <div class="gold-rule"></div>
-    <h2>We Provide The Best <em>Interior</em> Service</h2>
-    <p>We craft modern, elegant, and functional interior spaces tailored 
-      to your lifestyle. From concept to completion, we bring creativity 
-      and precision together to transform your space into something truly exceptional.</p>
-    <a href="#">Read More →</a>
-  </div>
-  <div class="aboutimage2">
-    <img src="images/hero2.webp" alt="KAM Studios design">
-  </div>
-</section>
-
-
+    <section class="about-us">
+        <div class="aboutimage1">
+            <img src="images/hero1.webp" alt="KAM Studios interior">
+        </div>
+        <div class="about-heading">
+            <p class="eyebrow">About Us</p>
+            <div class="gold-rule"></div>
+            <h2>We Provide The Best <em>Interior</em> Service</h2>
+            <p>We craft modern, elegant, and functional interior spaces tailored 
+            to your lifestyle. From concept to completion, we bring creativity 
+            and precision together to transform your space into something truly exceptional.</p>
+            <a href="#">Read More →</a>
+        </div>
+        <div class="aboutimage2">
+            <img src="images/hero2.webp" alt="KAM Studios design">
+        </div>
     </section>
 
+        <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials"></section>
+
+    <!--join us section -->
+    <section class="join-us">
+        <div class="join-us-content">
+            <h2>Join Us</h2>
+            <p> START YOUR CUSTOMER JOURNEY WITH US</p>
+           <button><a href="#">Apply Now</a></button> 
+        </div>
+    </section>
+
+   <!-- Footer -->
+<footer>
+    <div class="footer-content">
+
+        <!-- Column 1 -->
+        <div class="footer-column">
+            <div class="footer-logo">
+               <img src="./images/logo.webp" alt="KAM STUDIOS Logo">
+                <h1>KAM STUDIOS</h1>
+            </div>
+
+            <h2>Want to Create Something Great Together?</h2>
+
+           <button class="footer-btn1"><a href="#contact">Get Started</a></button> 
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+
+            <div class="contact-item">
+                <h4>Call us at:</h4>
+                <p>+233 183 3535</p>
+            </div>
+
+            <div class="contact-item">
+                <h4>Our Location:</h4>
+                <p>
+                    121 King Street Melbourne,<br>
+                    3000, Australia
+                </p>
+            </div>
+
+            <div class="contact-item">
+                <h4>Email us at:</h4>
+                <p>
+                    <a href="mailto:info@kamstudios.com">
+                        info@kamstudios.com
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-column">
+            <h3>Subscribe to Our Newsletter</h3>
+
+            <form class="newsletter-form">
+                <input
+                    type="email"
+                    placeholder="Enter Your Email Address"
+                >
+                <button class="submit-btn" type="submit">Subscribe</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 KAM STUDIOS. All Rights Reserved.</p>
+    </div>
+</footer>
+
     <script src="./script/script.js" defer></script>
+    <script src="./script/hamburger.js" defer></script>
+    <script src="./script/testimonial.js" defer></script>
 
  
 </body>
