@@ -1,0 +1,133 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+     background-image:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('/images/interior1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.container-content{
+  text-align: center;
+  color: var(--ivory);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.container h2 {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.container p {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+
+.container1 {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 200px;
+  background-color: var(--black);
+  margin-top: 20px;
+}
+
+.imgSection {
+  flex: 0 0 45%;
+  position: relative;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--offblack);
+}
+
+.imgSection::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 1px solid var(--gold-line);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.imgSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.container1 > section:last-child {
+  flex: 0 0 55%;
+  padding: 80px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-left: 1px solid var(--gold-line);
+}
+
+.container1 > section:last-child h3 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+  position: relative;
+  padding-bottom: 22px;
+}
+
+.container1 > section:last-child h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+.container1 > section:last-child p {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--ivory);
+  opacity: 0.85;
+  margin-top: 26px;
+  white-space: pre-line;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 1000px) {
+  .container1 {
+    flex-direction: column;
+  }
+
+  .imgSection {
+    display: none;
+  }
+
+  .container1 > section:last-child {
+    flex: 1 1 auto;
+    border-left: none;
+    border-top: none;
+    padding: 50px 30px;
+  }
+}
