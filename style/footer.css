@@ -174,11 +174,11 @@ footer{
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 80px;
+    width: 100%;
     gap: 1rem;
     margin-top: 1rem;
     background: var(--offblack);
-    margin-left: 120px;
+    
 }
 
 .footer-bottom{
@@ -210,7 +210,4 @@ footer{
         gap: 1rem;
     }
 
-    .social-icons{
-    margin-left: 275px;
-}
 }
