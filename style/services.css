@@ -20,7 +20,7 @@ text-align:center;
 padding:8rem 10%;
 background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
 url('../images/interior3.webp') center center / cover no-repeat;
-height:100vh;
+min-height:100vh;        /* was height:100vh */
 margin-bottom:8rem;
 }
 
@@ -123,7 +123,7 @@ main{
 
     font-family:var(--serif);
     color:var(--gold);
-    font-size:3rem;
+    font-size:2.3rem;
     margin-bottom:1rem;
     position:relative;
 
@@ -179,7 +179,7 @@ main{
 Responsive
 ==========================*/
 
-@media(max-width:768px){
+@media(max-width:896px){
 
 .service{
 
@@ -212,7 +212,8 @@ padding:0.5rem;
 
 .service h3{
 
-font-size:2.3rem;
+font-size:2rem;
+margin :0;
 
 }
 
@@ -222,6 +223,8 @@ color:var(--gold);
 letter-spacing:4px;
 text-transform:uppercase;
 font-family:var(--sans);
+margin-top: 0;
+font-size:1.2rem;
 
 }
 
@@ -255,6 +258,32 @@ font-size:1.5rem;
 }
 
 }
+
+
+/*==========================
+Landscape / short-viewport fix
+==========================*/
+@media (max-height: 500px) and (orientation: landscape){
+
+.services-hero{
+    min-height:auto;
+    padding:4rem 8%;
+}
+
+.services-hero p:first-child{
+    margin-top:1rem;
+    font-size:1rem;
+}
+
+.services-hero h1{
+    font-size:2.2rem;
+    margin-top:1.5rem;
+}
+
+.services-hero .gold-line{
+    margin:1rem auto;
+}
+
 
 @media(max-width:480px){
 
