@@ -3,7 +3,7 @@
 =========================== */
 *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
+     :root {
       --black: #080808;
       --offblack: #0f0f0f;
       --gold: #C9A84C;
@@ -11,9 +11,10 @@
       --gold-line: rgba(201, 168, 76, 0.35);
       --ivory: #F5F0E8;
       --charcoal: #2A2A2A;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'Jost', system-ui, sans-serif;
+      --serif: "Special Gothic Expanded One", sans-serif;
+      --sans: "Arimo", sans-serif;
     }
+
     
 .testimonials {
   width: min(1200px, 90%);
