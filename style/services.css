@@ -185,7 +185,7 @@ Responsive
 
 grid-template-columns:1fr;
 gap:2rem;
-margin-bottom:5rem;
+margin: 1.5rem;
 
 }
 
@@ -206,6 +206,7 @@ height:350px;
 
 border-left:3px solid var(--gold-line);
 border-right:none;
+padding:0.5rem;
 
 }
 
