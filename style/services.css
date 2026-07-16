@@ -16,9 +16,10 @@
 
 text-align:center;
 padding:8rem 10%;
-background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
 url('../images/interior3.webp') center center / cover no-repeat;
-
+height:100vh;
+margin-bottom:8rem;
 }
 
 .services-hero p:first-child{
@@ -55,6 +56,7 @@ margin:auto;
 line-height:2;
 color:rgba(245,240,232,.8);
 font-family:var(--sans);
+font-size:1.5rem;
 
 }
 
@@ -66,15 +68,15 @@ main{
     width:100%;
     background:var(--black);
     color:var(--ivory);
-    padding:6rem 8%;
 }
 
 .service{
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
-    gap:5rem;
-    margin-bottom:8rem;
+    gap:3rem;
+    margin:3rem;
+
 }
 
 /* Alternate Layout */
@@ -87,20 +89,17 @@ main{
     order:1;
 }
 
-/* IMAGE */
-
-.service-picture{
-    overflow:hidden;
+.service-picture {
+    overflow: hidden;
 }
 
-.service-picture img{
-
-    width:100%;
-    height:600px;
-    object-fit:cover;
-    transition:.7s;
-    display:block;
-
+.service-picture img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    transition: .7s;
+    display: block;
 }
 
 .service:hover img{
