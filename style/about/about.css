@@ -39,15 +39,14 @@
 }
 
 .container-main h2 {
-  font-family: var(--sans);
-  font-weight: 300;
+  font-family: var(--serif);
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: var(--gold);
 }
 
 .container-main p {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.5;
   margin-bottom: 2rem;
@@ -121,7 +120,7 @@
 }
 
 .container1 > section:last-child p {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.15rem;
   line-height: 1.9;
   color: var(--ivory);
@@ -168,7 +167,7 @@
 }
 
 .container2 p {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.15rem;
   line-height: 1.9;
   color: var(--ivory);
@@ -200,7 +199,7 @@
 }
 
 .container3 p {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.15rem;
   line-height: 1.9;
   color: var(--ivory);
