@@ -1,71 +1,104 @@
-const heroContent = [
-  {
-    title: "Timeless Luxury, Designed for Living",
-    subtitle: "Transforming spaces into masterpieces of elegance and comfort."
-  },
-  {
-    title: "Where Sophistication Meets Craftsmanship",
-    subtitle: "Creating bespoke interiors that reflect your unique lifestyle."
-  },
-  {
-    title: "Elevating Interiors Beyond Expectations",
-    subtitle: "Experience refined design tailored to inspire and impress."
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* =========================
+     ESCAPE HELPER
+  ========================= */
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, function (match) {
+      const escape = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      };
+      return escape[match];
+    });
   }
-];
 
-const title = document.getElementById("hero-title");
-const subtitle = document.getElementById("hero-subtitle");
+  /* =========================
+     SERVICES DATA
+  ========================= */
+  const services = [
+    {
+      title: "Residential Interior Design",
+      description: "Full-service design from concept through installation, including spatial planning, bespoke furnishings, and material specification."
+    },
+    {
+      title: "Space Planning & Renovation",
+      description: "Strategic layouts and architectural refinement that enhance flow, proportion, and long-term functionality."
+    },
+    {
+      title: "Custom Furniture & Curation",
+      description: "Bespoke furniture, curated lighting, textiles, and art selection tailored to each environment."
+    }
+  ];
 
-let current = 0;
+  function buildServiceHtml(item) {
+    return `
+      <div class="service-card">
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.description)}</p>
+      </div>
+    `;
+  }
 
-// initial pop-in
-function popIn() {
-  title.classList.add("pop-in");
-  subtitle.classList.add("pop-in");
-}
+  function renderServices() {
+    const root = document.getElementById("services-root");
+    if (!root) return;
 
-// pop-out
-function popOut() {
-  title.classList.remove("pop-in");
-  subtitle.classList.remove("pop-in");
+    root.innerHTML = `
+      <div class="section-inner">
+        <p class="eyebrow">What We Do</p>
+        <h2>FULL-SERVICE DESIGN & CURATION</h2>
+        <div class="services-grid">
+          ${services.map(buildServiceHtml).join("")}
+        </div>
+      </div>
+    `;
+  }
 
-  title.classList.add("pop-out");
-  subtitle.classList.add("pop-out");
-}
+  /* =========================
+     PORTFOLIO DATA
+  ========================= */
+  const portfolio = [
+    {
+      image: "./images/interior design.webp",
+      alt: "Luxury living room interior by KWBN Interiors"
+    },
+    {
+      image: "./images/space planning.webp",
+      alt: "Refined dining space with architectural lighting"
+    },
+    {
+      image: "./images/renovation.webp",
+      alt: "Modern residential renovation project"
+    }
+  ];
 
-// reset for next entry
-function resetAndChangeText() {
-  current = (current + 1) % heroContent.length;
+  function buildPortfolioHtml(item) {
+    return `
+      <div class="portfolio-item">
+        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt)}">
+      </div>
+    `;
+  }
 
-  title.textContent = heroContent[current].title;
-  subtitle.textContent = heroContent[current].subtitle;
+  function renderPortfolio() {
+    const root = document.getElementById("portfolio-root");
+    if (!root) return;
 
-  title.classList.remove("pop-out");
-  subtitle.classList.remove("pop-out");
+    root.innerHTML = `
+      <div class="section-inner">
+        <p class="eyebrow">Selected Work</p>
+        <h2>SPACES THAT SPEAK WITHOUT RAISING THEIR VOICE</h2>
+        <div class="portfolio-grid">
+          ${portfolio.map(buildPortfolioHtml).join("")}
+        </div>
+      </div>
+    `;
+  }
 
-  void title.offsetWidth; // force refresh
-
-  popIn();
-}
-
-// initial state
-title.textContent = heroContent[0].title;
-subtitle.textContent = heroContent[0].subtitle;
-popIn();
-
-// cycle
-setInterval(() => {
-
-  popOut();
-
-  setTimeout(() => {
-    resetAndChangeText();
-  }, 100); // match popOut duration
-
-}, 4000);
-
-
-// Js codde that observers the screen to see if 
-// the service component shows to trigger the css meant for it
-
-
+  renderServices();
+  renderPortfolio();
+});
