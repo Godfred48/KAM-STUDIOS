@@ -1,0 +1,327 @@
+/* =========================
+   ABOUT HERO (CINEMATIC)
+========================= */
+
+.about-hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  background: var(--offblack);
+  overflow: hidden;
+}
+
+/* Background Image */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../images/interior4.webp") center / cover no-repeat;
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Dark Overlay */
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 8, 8, 0.85),
+    rgba(8, 8, 8, 0.75)
+  );
+  z-index: 1;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.about-hero h2 {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+
+.about-hero p {
+  color: rgba(245, 240, 232, 0.75);
+}
+
+.about-hero .eyebrow{
+    color: var(--gold);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section img,
+.ceo-section img {
+  border: 1px solid var(--gold-line);
+  transition: transform 0.6s ease;
+}
+
+.about-section img:hover,
+.ceo-section img:hover {
+  transform: scale(1.04);
+}
+
+/* =========================
+   MISSION SECTION
+========================= */
+
+.mission-section {
+  background: var(--black);
+}
+
+/* =========================
+   CEO SECTION
+========================= */
+
+.ceo-section {
+  background: var(--offblack);
+}
+
+.ceo-section p {
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* =========================
+   TYPOGRAPHY CONTROL
+========================= */
+
+.about-section h2,
+.mission-section h2,
+.ceo-section h2 {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.about-section p,
+.mission-section p,
+.ceo-section p {
+  font-family: var(--sans);
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* =========================
+   ABOUT HERO (CINEMATIC)
+========================= */
+
+.about-hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  background: var(--offblack);
+  overflow: hidden;
+}
+
+/* Background Image */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../../images/interior4.webp") center / cover no-repeat;
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+/* Dark Overlay */
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 8, 8, 0.85),
+    rgba(8, 8, 8, 0.75)
+  );
+  z-index: 1;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.about-hero h2 {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+
+.about-hero p {
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section img,
+.ceo-section img {
+  border: 1px solid var(--gold-line);
+  transition: transform 0.6s ease;
+}
+
+.about-section img:hover,
+.ceo-section img:hover {
+  transform: scale(1.04);
+}
+
+/* =========================
+   MISSION SECTION
+========================= */
+
+.mission-section {
+  background: var(--black);
+}
+
+/* =========================
+   CEO SECTION
+========================= */
+
+.ceo-section {
+  background: var(--offblack);
+}
+
+.ceo-section p {
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* =========================
+   TYPOGRAPHY CONTROL
+========================= */
+
+.about-section h2,
+.mission-section h2,
+.ceo-section h2 {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.about-section p,
+.mission-section p,
+.ceo-section p {
+  font-family: var(--sans);
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* =========================
+   CEO QUOTE MARK
+========================= */
+
+.ceo-section .section-inner {
+  position: relative;
+}
+
+.ceo-section .section-inner::before {
+  content: "“";
+  position: absolute;
+  top: -40px;
+  left: -10px;
+  font-family: var(--serif);
+  font-size: 12rem;
+  color: var(--gold);
+  opacity: 0.06;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* =========================
+   SCROLL REVEAL (STAGGERED)
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.delay-1 {
+  transition-delay: 0.15s;
+}
+
+.reveal.delay-2 {
+  transition-delay: 0.3s;
+}
+
+.reveal.delay-3 {
+  transition-delay: 0.45s;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .about-hero h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 70vh;
+  }
+
+  .about-hero h2 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .about-hero h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 70vh;
+  }
+
+  .about-hero h2 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h2 {
+    font-size: 1.6rem;
+  }
+}
