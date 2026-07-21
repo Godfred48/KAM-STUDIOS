@@ -55,7 +55,20 @@
 }
 
 
+.about-section .eyebrow{
+    color: var(--gold);
+}
+
+
 .about-hero .eyebrow{
+    color: var(--gold);
+}
+
+.mission-section .eyebrow{
+    color: var(--gold);
+}
+
+.ceo-section .eyebrow{
     color: var(--gold);
 }
 

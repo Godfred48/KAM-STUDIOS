@@ -10,300 +10,148 @@
       --sans: "Arimo", sans-serif;
     }
 
-
-
-.services-hero{
-display:block;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:8rem 10%;
-background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-url('../images/interior3.webp') center center / cover no-repeat;
-min-height:100vh;        /* was height:100vh */
-margin-bottom:8rem;
-}
-
-.services-hero p:first-child{
-
-color:var(--gold);
-letter-spacing:4px;
-text-transform:uppercase;
-font-family:var(--sans);
-margin-top: 5rem;
-
-}
-
-.services-hero h1{
-
-font-family:var(--serif);
-font-size:4.5rem;
-margin-top:5rem;
-color:var(--gold);
-
-}
-
-.services-hero .gold-line{
-
-width:100px;
-height:2px;
-background:var(--gold);
-margin:2rem auto;
-
-}
-
-.services-hero p:last-child{
-
-max-width:750px;
-margin:auto;
-line-height:2;
-color:rgba(245,240,232,.8);
-font-family:var(--sans);
-font-size:2rem;
-
-}
-
-/*==============================
-    SERVICES PAGE
-===============================*/
-
-main{
-    width:100%;
-    background:var(--black);
-    color:var(--ivory);
-}
-
-.service{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:3rem;
-    margin:3rem;
-
-}
-
-/* Alternate Layout */
-
-.service:nth-child(even) .service-picture{
-    order:2;
-}
-
-.service:nth-child(even) article{
-    order:1;
-}
-
-.service-picture {
-    overflow: hidden;
-}
-
-.service-picture img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    object-position: center;
-    transition: .7s;
-    display: block;
-}
-
-.service:hover img{
-
-    transform:scale(1.06);
-
-}
-
-/* TEXT */
-
-.service article{
-
-    padding:2rem;
-
-}
-
-.service h3{
-
-    font-family:var(--serif);
-    color:var(--gold);
-    font-size:2.3rem;
-    margin-bottom:1rem;
-    position:relative;
-
-}
-
-.service h3::after{
-
-    content:'';
-    width:80px;
-    height:2px;
-    background:var(--gold);
-    position:absolute;
-    left:0;
-    bottom:-12px;
-
-}
-
-.service p{
-
-    margin-top:2rem;
-    line-height:2;
-    font-size:1.5rem;
-    color:rgba(245,240,232,.85);
-    font-family:var(--sans);
-
-}
-
-/* decorative border */
-
-.service article{
-
-    border-left:3px solid var(--gold-line);
-
-}
-
-.service:nth-child(even) article{
-
-    border-left:none;
-    border-right:3px solid var(--gold-line);
-
-}
-
-/* Hover */
-
-.service:hover article{
-
-    transform:translateY(-5px);
-    transition:.4s;
-
-}
-
-/*==========================
-Responsive
-==========================*/
-
-@media(max-width:896px){
-
-.service{
-
-grid-template-columns:1fr;
-gap:2rem;
-margin: 1.5rem;
-
-}
-
-.service:nth-child(even) .service-picture,
-.service:nth-child(even) article{
-
-order:unset;
-
-}
-
-.service-picture img{
-
-height:350px;
-
-}
-
-.service article{
-
-border-left:3px solid var(--gold-line);
-border-right:none;
-padding:0.5rem;
-
-}
-
-.service h3{
-
-font-size:2rem;
-margin :0;
-
-}
-
-.services-hero p:first-child{
-
-color:var(--gold);
-letter-spacing:4px;
-text-transform:uppercase;
-font-family:var(--sans);
-margin-top: 0;
-font-size:1.2rem;
-
-}
-
-.services-hero h1{
-
-font-family:var(--sans);
-font-size:2rem;
-margin:1rem 0;
-color:var(--gold);
-
-}
-
-.services-hero .gold-line{
-
-width:100px;
-height:2px;
-background:var(--gold);
-margin:2rem auto;
-
-}
-
-.services-hero p:last-child{
-
-max-width:750px;
-margin:auto;
-line-height:2;
-color:rgba(245,240,232,.8);
-font-family:var(--sans);
-font-size:1.5rem;
-
-}
-
+/* =========================
+   SERVICES HERO
+========================= */
+
+.services-hero {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  background: var(--offblack);
+  overflow: hidden;
+  margin-bottom: 6rem;
 }
 
 
-/*==========================
-Landscape / short-viewport fix
-==========================*/
-@media (max-height: 500px) and (orientation: landscape){
-
-.services-hero{
-    min-height:auto;
-    padding:4rem 8%;
+.services-hero .eyebrow{
+color: var(--gold);
 }
 
-.services-hero p:first-child{
-    margin-top:1rem;
-    font-size:1rem;
+
+.services-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/hero.webp") center / cover no-repeat;
+  transform: scale(1.05);
+  z-index: 0;
 }
 
-.services-hero h1{
-    font-size:2.2rem;
-    margin-top:1.5rem;
+.services-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 8, 8, 0.85),
+    rgba(8, 8, 8, 0.75)
+  );
+  z-index: 1;
 }
 
-.services-hero .gold-line{
-    margin:1rem auto;
-}
-}
-
-@media(max-width:480px){
-
-.service-picture img{
-
-height:250px;
-
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
 }
 
-.service h3{
-
-font-size:1.9rem;
-
+.services-hero h2 {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
 }
 
-.service p{
-
-font-size:.95rem;
-line-height:1.8;
-
+.services-hero p {
+  color: rgba(245, 240, 232, 0.75);
 }
 
+/* =========================
+   INTRO
+========================= */
+
+.services-intro {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.services-intro p {
+  max-width: 700px;
+  margin: auto;
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* =========================
+   EDITORIAL LAYOUT
+========================= */
+
+.services-editorial {
+  padding-bottom: 6rem;
+}
+
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto 8rem auto;
+}
+
+.service-row.reverse {
+  direction: rtl;
+}
+
+.service-row.reverse .service-text {
+  direction: ltr;
+}
+
+.service-image {
+  overflow: hidden;
+  border: 1px solid var(--gold-line);
+}
+
+.service-image img {
+  width: 100%;
+  transition: transform 0.8s ease;
+}
+
+.service-image:hover img {
+  transform: scale(1.06);
+}
+
+.service-text h3 {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.service-text p {
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .service-row.reverse {
+    direction: ltr;
+  }
+
+  .services-hero h2 {
+    font-size: 1.9rem;
+  }
 }
