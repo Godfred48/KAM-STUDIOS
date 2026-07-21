@@ -19,7 +19,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../../images/interior4.webp") center / cover no-repeat;
+  background: url("../images/interior3.webp") center / cover no-repeat;
   transform: scale(1.05);
   z-index: 0;
 }
