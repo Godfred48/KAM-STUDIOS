@@ -102,3 +102,23 @@ document.addEventListener("DOMContentLoaded", function () {
   renderServices();
   renderPortfolio();
 });
+
+
+/* =========================
+   SCROLL REVEAL LOGIC
+========================= */
+function handleScrollReveal() {
+  const reveals = document.querySelectorAll(".reveal");
+
+  reveals.forEach((element) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = element.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      element.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", handleScrollReveal);
+handleScrollReveal();
