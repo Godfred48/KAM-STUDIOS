@@ -1,0 +1,352 @@
+/* ==========================================================================
+   DESIGN TOKENS (Importing variables to ensure strict architecture consistency)
+   ========================================================================== */
+:root {
+  --transition-premium: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Ease Out Expo physics curve */
+}
+
+/* ==========================================================================
+   CONTACT HERO (Cinematic Layout)
+   ========================================================================== */
+.contact-hero {
+  position: relative;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  background: var(--offblack);
+  overflow: hidden;
+}
+
+.contact-hero .eyebrow {
+  color: var(--gold);
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/interior3.webp") center / cover no-repeat;
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8, 8, 8, 0.9), rgba(8, 8, 8, 0.8));
+  z-index: 1;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin-top: 20px;
+}
+
+.contact-hero h2 {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.contact-hero p {
+  color: rgba(245, 240, 232, 0.75);
+}
+
+/* ==========================================================================
+   CONTACT WORKSPACE GRID
+   ========================================================================== */
+.contact-section {
+  padding: 8rem 0;
+  background: var(--black);
+}
+
+.contact-grid {
+  max-width: 1200px;
+  width: 92%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 6rem;
+}
+
+/* Form inputs styling with zero SaaS roundness, strict architectural lines */
+.contact-form-wrapper input,
+.contact-form-wrapper select,
+.contact-form-wrapper textarea {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  background: var(--offblack);
+  border: 1px solid var(--gold-line);
+  color: var(--ivory);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  border-radius: 0; /* Strict angular edges */
+  transition: var(--transition-premium);
+}
+
+.contact-form-wrapper input:focus,
+.contact-form-wrapper select:focus,
+.contact-form-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+/* Custom styling for drop-down */
+.contact-form-wrapper select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  background-size: 1rem;
+}
+
+/* Info Column styling */
+.contact-info h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: var(--gold);
+}
+
+.contact-info p {
+  font-family: var(--sans);
+  color: rgba(245, 240, 232, 0.85);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.contact-info a {
+  color: var(--ivory);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-line);
+  transition: var(--transition-premium);
+}
+
+.contact-info a:hover {
+  border-color: var(--gold);
+}
+
+.contact-note {
+  font-style: italic;
+  color: var(--gold-line) !important;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem;
+  margin-top: 3rem;
+}
+
+
+button {
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-family: var(--sans);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: var(--transition-premium);
+}
+/* ==========================================================================
+   PREMIUM MODAL & ANIMATION PHYSICS
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 8, 8, 0); /* Animating opacity dynamically from JS script */
+  backdrop-filter: blur(0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  pointer-events: none;
+  transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+}
+
+/* Modal Content Box starts invisible, scaled down to create the premium opening motion */
+.modal-content {
+  background: var(--offblack);
+  padding: 4rem 3rem;
+  border: 1px solid var(--gold-line);
+  max-width: 520px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: var(--transition-premium);
+}
+
+/* Active Class states applied via classList.add('active') */
+.modal-overlay.active {
+  pointer-events: auto;
+  background-color: rgba(8, 8, 8, 0.92);
+  backdrop-filter: blur(15px);
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.modal-content h3 {
+  font-family: var(--serif);
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.modal-content p {
+  color: rgba(245, 240, 232, 0.8);
+  font-family: var(--sans);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* =========================
+   HERO RESPONSIVE REFINEMENT
+========================= */
+
+@media (max-width: 1024px) {
+  .contact-hero h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    min-height: 60vh;
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .contact-hero h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtext {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    min-height: 55vh;
+  }
+
+  .contact-hero h2 {
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-subtext {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ==========================================================================
+   UI LOADING STATES (No double-submission allowed)
+   ========================================================================== */
+#confirm-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#confirm-btn .spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--black);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: rotateSpinner 0.8s linear infinite;
+  margin-left: 10px;
+}
+
+/* When state changes to sending, switch the spinner on and disable action */
+#confirm-btn.sending .btn-text {
+  opacity: 0.6;
+}
+
+#confirm-btn.sending .spinner {
+  display: inline-block;
+}
+
+#confirm-btn.sending {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes rotateSpinner {
+  to { transform: rotate(360deg); }
+}
+
+/* State management for locking scroll */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   CUSTOM TOAST SYSTEM (SaaS notifications look cheap; this is editorial minimal)
+   ========================================================================== */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--offblack);
+  border-left: 2px solid var(--gold);
+  border-top: 1px solid var(--gold-line);
+  border-right: 1px solid var(--gold-line);
+  border-bottom: 1px solid var(--gold-line);
+  padding: 1.5rem 2.5rem;
+  color: var(--ivory);
+  font-family: var(--sans);
+  z-index: 3000;
+  transform: translateY(150%) opacity(0);
+  opacity: 0;
+  transition: var(--transition-premium);
+  pointer-events: none;
+}
+
+.toast-container.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .contact-grid {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+
+  .contact-info {
+    order: -1; /* Info column moves to top on compact viewports to prioritize location/email */
+  }
+}
