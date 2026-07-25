@@ -48,13 +48,17 @@ header {
   font-size: 0.95rem;
   letter-spacing: 0.2em;
   color: var(--gold);
-  text-transform: uppercase;
 }
 
-nav ul { list-style: none; display: flex; gap: 40px; }
+.largeNav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
 nav ul li a {
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(245, 240, 232, 0.75);
@@ -64,9 +68,6 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a.active { color: var(--gold); }
 
-.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
-.hamburger span { width: 24px; height: 1.5px; background: var(--gold); }
-.mobileNav { display: none; }
 
 /* ── PORTFOLIO SECTION ── */
 .portfolio-hero {
@@ -208,6 +209,9 @@ nav ul li a.active { color: var(--gold); }
   color: rgba(245, 240, 232, 0.5);
 }
 
+
+
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
@@ -217,7 +221,7 @@ nav ul li a.active { color: var(--gold); }
   header { padding: 0 24px; }
   .largeNav { display: none; }
   .hamburger { display: flex; }
-  .mobileNav.open { display: block; }
+
   .portfolio-hero { padding: 120px 20px 40px; }
   .portfolio-grid { grid-template-columns: 1fr; width: 90%; gap: 18px; }
   .filter-bar { gap: 8px; }
