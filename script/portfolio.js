@@ -53,6 +53,66 @@ const works = [
     category: "washroom",
     image: "./images/portfolio/wash1.webp",
   },
+  {
+    id: "w011",
+    title: "Contemporary",
+    category: "hall",
+    image: "./images/contemporary/con1.webp",
+  },
+  {
+    id: "w012",
+    title: "Contemporary",
+    category: "hall",
+    image: "./images/contemporary/con3.webp",
+  },
+  {
+    id: "w013",
+    title: "Induatrial",
+    category: "hall",
+    image: "./images/industry/in4.webp",
+  },
+  {
+    id: "w14",
+    title: "Industrial",
+    category: "resturant",
+    image: "./images/industry/in1.webp",
+  },
+  {
+    id: "w15",
+    title: "Industrial",
+    category: "kitchen",
+    image: "./images/industry/in2.webp",
+  },
+  {
+    id: "w16",
+    title: "Industrial",
+    category: "resturant",
+    image: "./images/industry/in3.webp",
+  },
+  {
+    id: "w17",
+    title: "",
+    category: "washroom",
+    image: "./images/portfolio/wash1.webp",
+  },
+  {
+    id: "w18",
+    title: "Ivory Washroom",
+    category: "washroom",
+    image: "./images/portfolio/wash1.webp",
+  },
+  {
+    id: "w18",
+    title: "Ivory Washroom",
+    category: "washroom",
+    image: "./images/portfolio/wash1.webp",
+  },
+  {
+    id: "w20",
+    title: "Ivory Washroom",
+    category: "washroom",
+    image: "./images/portfolio/wash1.webp",
+  },
 ];
 
 /* ---------- helpers ---------- */
