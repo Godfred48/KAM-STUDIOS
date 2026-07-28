@@ -54,19 +54,19 @@ const works = [
     image: "./images/portfolio/wash1.webp",
   },
   {
-    id: "w011",
+    id: "w11",
     title: "Contemporary",
     category: "hall",
     image: "./images/contemporary/con1.webp",
   },
   {
-    id: "w012",
+    id: "w12",
     title: "Contemporary",
     category: "hall",
     image: "./images/contemporary/con3.webp",
   },
   {
-    id: "w013",
+    id: "w13",
     title: "Induatrial",
     category: "hall",
     image: "./images/industry/in4.webp",
@@ -91,29 +91,41 @@ const works = [
   },
   {
     id: "w17",
-    title: "",
-    category: "washroom",
-    image: "./images/portfolio/wash1.webp",
+    title: "Maximalist",
+    category: "hall",
+    image: "./images/maxi/max1.webp",
   },
   {
     id: "w18",
-    title: "Ivory Washroom",
-    category: "washroom",
-    image: "./images/portfolio/wash1.webp",
+    title: "Maximmalist",
+    category: "hall",
+    image: "./images/maxi/max2.webp",
   },
   {
-    id: "w18",
-    title: "Ivory Washroom",
-    category: "washroom",
-    image: "./images/portfolio/wash1.webp",
+    id: "w19",
+    title: "Minimalist",
+    category: "hall",
+    image: "./images/mini/min1.webp",
   },
   {
     id: "w20",
-    title: "Ivory Washroom",
-    category: "washroom",
-    image: "./images/portfolio/wash1.webp",
+    title: "Minimalist",
+    category: "hall",
+    image: "./images/mini/min2.webp",
   },
-];
+  {
+    id: "w21",
+    title: "Scandinavian",
+    category: "hall",
+    image: "./images/scandi/scan2.webp",
+  },
+  {
+    id: "w22",
+    title: "Scandinavian",
+    category: "hall",
+    image: "./images/scandi/scan1.webp",
+  },
+];         
 
 /* ---------- helpers ---------- */
 
