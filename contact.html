@@ -12,6 +12,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
+
   <!-- Design Token Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,23 +76,72 @@
     <div class="contact-grid">
       <!-- FORM -->
       <div class="contact-form-wrapper">
-        <form id="contact-form">
-          <input type="text" name="full_name" placeholder="Full Name *" required>
-          <input type="email" name="email" placeholder="Email Address *" required>
-          <input type="tel" name="phone" placeholder="Phone Number *" required>
+       <form id="contact-form">
+  <label for="full-name">Full Name</label>
+  <input
+    id="full-name"
+    type="text"
+    name="full_name"
+    placeholder="Full Name *"
+    autocomplete="name"
+    required
+  >
 
-          <select name="project_type" required>
-            <option value="">Project Type *</option>
-            <option value="Residential">Residential</option>
-            <option value="Commercial">Commercial</option>
-            <option value="Renovation">Renovation</option>
-          </select>
+  <label for="contact-email">Email Address</label>
+  <input
+    id="contact-email"
+    type="email"
+    name="email"
+    placeholder="Email Address *"
+    autocomplete="email"
+    required
+  >
 
-          <input type="text" name="location" placeholder="Project Location *" required>
-          <textarea name="message" rows="5" placeholder="Tell us about your project *" required></textarea>
+  <label for="contact-phone">Phone Number</label>
+  <input
+    id="contact-phone"
+    type="tel"
+    name="phone"
+    placeholder="Phone Number *"
+    autocomplete="tel"
+    required
+  >
 
-          <button type="submit" class="btn-primary">Submit Request</button>
-        </form>
+  <label for="project-type">Project Type</label>
+  <select
+    id="project-type"
+    name="project_type"
+    required
+  >
+    <option value="">Project Type *</option>
+    <option value="Residential">Residential</option>
+    <option value="Commercial">Commercial</option>
+    <option value="Renovation">Renovation</option>
+  </select>
+
+  <label for="project-location">Project Location</label>
+  <input
+    id="project-location"
+    type="text"
+    name="location"
+    placeholder="Project Location *"
+    autocomplete="street-address"
+    required
+  >
+
+  <label for="project-message">Project Description</label>
+  <textarea
+    id="project-message"
+    name="message"
+    rows="5"
+    placeholder="Tell us about your project *"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn-primary">
+    Submit Request
+  </button>
+</form>
       </div>
 
       <!-- STUDIO DETAILS -->
@@ -111,13 +161,37 @@
 </main>
 
 <!-- CONFIRMATION MODAL -->
-<div class="modal-overlay" id="confirmation-modal" aria-hidden="true" role="dialog">
+<div
+  class="modal-overlay"
+  id="confirmation-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="confirmation-title"
+  aria-describedby="confirmation-description"
+  aria-hidden="true"
+>
   <div class="modal-content">
-    <h3>Confirm Submission</h3>
-    <p>Please confirm you would like to transmit your consultation details to KWBN Interiors.</p>
+    <h3 id="confirmation-title">Confirm Submission</h3>
+
+    <p id="confirmation-description">
+      Please confirm that you would like to submit your consultation
+      details to KWBN Interiors.
+    </p>
+
     <div class="modal-actions">
-      <button id="cancel-btn" class="btn-secondary">Cancel</button>
-      <button id="confirm-btn" class="btn-primary">
+      <button
+        id="cancel-btn"
+        class="btn-secondary"
+        type="button"
+      >
+        Cancel
+      </button>
+
+      <button
+        id="confirm-btn"
+        class="btn-primary"
+        type="button"
+      >
         <span class="btn-text">Proceed</span>
         <span class="spinner" aria-hidden="true"></span>
       </button>
@@ -125,8 +199,14 @@
   </div>
 </div>
 
-<!-- TOAST NOTIFICATION CONTAINER -->
-<div class="toast-container" id="toast-notification" role="status">
+<!-- STATUS NOTIFICATION -->
+<div
+  class="toast-container"
+  id="toast-notification"
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+>
   <p id="toast-message"></p>
 </div>
 
@@ -174,10 +254,12 @@
 </footer>
 
 <!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<!-- EmailJS must load before contact.js -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <script src="./script/hamburger.js" defer></script>
 <script src="./script/contact.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

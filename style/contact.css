@@ -304,49 +304,39 @@ body.no-scroll {
   overflow: hidden;
 }
 
-/* ==========================================================================
-   CUSTOM TOAST SYSTEM (SaaS notifications look cheap; this is editorial minimal)
-   ========================================================================== */
 .toast-container {
   position: fixed;
-  bottom: 2rem;
   right: 2rem;
+  bottom: 2rem;
+  z-index: 3000;
+  max-width: min(420px, calc(100% - 4rem));
+  padding: 1.25rem 1.5rem;
   background: var(--offblack);
+  border: 1px solid var(--gold-line);
   border-left: 2px solid var(--gold);
-  border-top: 1px solid var(--gold-line);
-  border-right: 1px solid var(--gold-line);
-  border-bottom: 1px solid var(--gold-line);
-  padding: 1.5rem 2.5rem;
   color: var(--ivory);
   font-family: var(--sans);
-  z-index: 3000;
-  transform: translateY(150%) opacity(0);
   opacity: 0;
-  transition: var(--transition-premium);
   pointer-events: none;
+  transform: translateY(2rem);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .toast-container.active {
-  transform: translateY(0);
   opacity: 1;
+  transform: translateY(0);
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN BREAKPOINTS
-   ========================================================================== */
-@media (max-width: 1024px) {
-  .contact-grid {
-    gap: 4rem;
-  }
+.toast-container p {
+  margin: 0;
 }
 
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 5rem;
-  }
-
-  .contact-info {
-    order: -1; /* Info column moves to top on compact viewports to prioritize location/email */
+@media (max-width: 600px) {
+  .toast-container {
+    right: 1rem;
+    bottom: 1rem;
+    max-width: calc(100% - 2rem);
   }
 }

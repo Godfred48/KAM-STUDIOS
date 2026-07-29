@@ -116,13 +116,13 @@ const works = [
   {
     id: "w21",
     title: "Scandinavian",
-    category: "hall",
+    category: "bedroom",
     image: "./images/scandi/scan2.webp",
   },
   {
     id: "w22",
     title: "Scandinavian",
-    category: "hall",
+    category: "kitchen",
     image: "./images/scandi/scan1.webp",
   },
 ];         
