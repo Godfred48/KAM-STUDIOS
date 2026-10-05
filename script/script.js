@@ -63,15 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
   const portfolio = [
     {
-      image: "./images/interior design.webp",
+      image: "../images/portfolio/bed2.webp",
       alt: "Luxury living room interior by KWBN Interiors"
     },
     {
-      image: "./images/space planning.webp",
+      image: "../images/portfolio/bed5.webp",
       alt: "Refined dining space with architectural lighting"
     },
     {
-      image: "./images/renovation.webp",
+      image: "../images/portfolio/bed7.webp",
       alt: "Modern residential renovation project"
     }
   ];

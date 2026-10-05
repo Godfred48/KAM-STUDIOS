@@ -1,0 +1,269 @@
+/* ==========================================================
+   KWBN Interiors – Welcome popup
+   Link this AFTER style.css and footer.css in <head>.
+   Uses the fonts the site already loads (no extra font link needed).
+   ========================================================== */
+
+:root {
+  --kwbn-ink: #0d0c0b;
+  --kwbn-gold: #c9a84c;
+  --kwbn-gold-soft: rgba(201, 168, 76, 0.35);
+  --kwbn-cream: #f3ede4;
+  --kwbn-muted: #cfc7bb;
+  --kwbn-display: "Special Gothic Expanded One", "Arial Black", sans-serif;
+  --kwbn-body: "Arimo", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Overlay ---------- */
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999; /* stays above the site header and mobile nav */
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+}
+
+.welcome-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease, visibility 0s;
+}
+
+/* ---------- Dialog box ---------- */
+.welcome-dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  width: min(100%, 880px);
+  max-height: calc(100vh - 2.5rem);
+  overflow: hidden;
+  background: var(--kwbn-ink);
+  border: 1px solid var(--kwbn-gold-soft);
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  transform: translateY(14px) scale(0.98);
+  transition: transform 0.4s ease;
+}
+
+.welcome-overlay.is-open .welcome-dialog {
+  transform: none;
+}
+
+/* ---------- Image panel (left) ---------- */
+.welcome-media {
+  position: relative;
+  min-height: 100%;
+  background: #2a2420; /* shows until the photo loads */
+}
+
+.welcome-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Content panel (right) ---------- */
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.5rem 2.75rem 2.25rem;
+  color: var(--kwbn-cream);
+  font-family: var(--kwbn-body);
+  overflow-y: auto;
+}
+
+.welcome-logo {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.welcome-logo img {
+  width: 90px;
+  height: auto;
+  display: block;
+}
+
+.welcome-logo-name {
+  margin-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--kwbn-gold-soft);
+  font-family: var(--kwbn-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--kwbn-gold);
+}
+
+.welcome-title {
+  margin: 0;
+  font-family: var(--kwbn-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.welcome-title span {
+  display: block;
+  color: var(--kwbn-gold);
+}
+
+.welcome-lead {
+  margin: 1.1rem 0 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+}
+
+.welcome-text {
+  margin: 1rem 0 0;
+  max-width: 36ch;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  color: var(--kwbn-muted);
+}
+
+/* ---------- Buttons ---------- */
+.welcome-actions {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  margin-top: 1.75rem;
+}
+
+.welcome-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #d6b45c, #b8963f);
+  color: #1a1612;
+  font-family: var(--kwbn-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.welcome-cta:hover {
+  color: #1a1612;
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.welcome-cta svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: none;
+}
+
+.welcome-skip {
+  padding: 0 0 0.3rem;
+  border: 0;
+  border-bottom: 1px solid var(--kwbn-gold);
+  border-radius: 0;
+  background: none;
+  color: var(--kwbn-cream);
+  font-family: var(--kwbn-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.welcome-skip:hover {
+  color: var(--kwbn-gold);
+}
+
+/* ---------- Close button ---------- */
+.welcome-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--kwbn-gold);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.welcome-close:hover {
+  transform: rotate(90deg);
+}
+
+.welcome-close svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+/* ---------- Keyboard focus ---------- */
+.welcome-dialog :focus-visible {
+  outline: 2px solid var(--kwbn-gold);
+  outline-offset: 3px;
+}
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 720px) {
+  .welcome-dialog {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px auto;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+
+  .welcome-media {
+    min-height: 180px;
+  }
+
+  .welcome-content {
+    padding: 1.75rem 1.5rem;
+    overflow: visible;
+  }
+
+  .welcome-title {
+    font-size: 1.35rem;
+  }
+
+  .welcome-close {
+    background: rgba(13, 12, 11, 0.6);
+    border-radius: 50%;
+  }
+}
+
+/* ---------- Respect reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-overlay,
+  .welcome-dialog,
+  .welcome-cta,
+  .welcome-close {
+    transition: none;
+  }
+}

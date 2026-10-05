@@ -27,6 +27,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="./style/style.css">
   <link rel="stylesheet" href="./style/footer.css">
+  <link rel="stylesheet" href="./style/popup.css">
 </head>
 
 <body>
@@ -103,7 +104,7 @@
         <a href="./about-us.html" class="btn-secondary">Discover the Studio →</a>
       </div>
       <div>
-        <img src="./images/interior design.webp"
+        <img src="./images/portfolio/bed3.webp"
              alt="Refined residential living room designed by KWBN Interiors">
       </div>
     </div>
@@ -212,8 +213,59 @@
   </div>
 </footer>
 
+<!-- ================= WELCOME POPUP ================= -->
+<div class="welcome-overlay" id="welcome-popup" aria-hidden="true">
+  <div class="welcome-dialog" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+
+    <button class="welcome-close" id="welcome-close" type="button" aria-label="Close welcome message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <path d="M5 5l14 14M19 5L5 19"/>
+      </svg>
+    </button>
+
+    <!-- Left: photo (replace the src with your image) -->
+    <div class="welcome-media">
+      <img src="./images/kwbn1.webp" alt="A warm, modern living room by KWBN Interiors">
+    </div>
+
+    <!-- Right: content -->
+    <div class="welcome-content">
+      <div class="welcome-logo">
+        <img src="./images/logo.webp" alt="">
+        <span class="welcome-logo-name">KWBN Interiors</span>
+      </div>
+
+      <h2 class="welcome-title" id="welcome-title">
+        Welcome to <span>KWBN Interiors</span>
+      </h2>
+
+      <p class="welcome-lead">We're so glad you're here.</p>
+
+      <p class="welcome-text">
+        Explore our curated spaces, discover our design services, and get
+        inspired to create a home or workspace that truly reflects you.
+      </p>
+
+      <div class="welcome-actions">
+        <a class="welcome-cta" href="./portfolio.html">
+          Explore our portfolio
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12h16M14 6l6 6-6 6"/>
+          </svg>
+        </a>
+        <button class="welcome-skip" id="welcome-skip" type="button">Continue browsing</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Scripts -->
+
+
 <!-- Scripts -->
 <script src="./script/script.js" defer></script>
+<script src="./script/welcomepopup.js" defer></script>
 <script src="./script/hamburger.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
