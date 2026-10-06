@@ -21,16 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
   const services = [
     {
-      title: "Residential Interior Design",
-      description: "Full-service design from concept through installation, including spatial planning, bespoke furnishings, and material specification."
+      title: "FUNCTION",
+      description: "Every element should have a purpose. We design modern spaces that are luxurious while remaining functional and comfortable."
     },
     {
-      title: "Space Planning & Renovation",
-      description: "Strategic layouts and architectural refinement that enhance flow, proportion, and long-term functionality."
+      title: "CHARACTER",
+      description: "A space should feel personal. We translate our client’s personality, lifestyle and aspirations into the design."
     },
     {
-      title: "Custom Furniture & Curation",
-      description: "Bespoke furniture, curated lighting, textiles, and art selection tailored to each environment."
+      title: "SIMPLICITY",
+      description: "The smallest details often make the biggest difference—from lighting and textures to furniture placement and material combinations.",
+    },
+    {
+      title: "DETAIL",
+      description: "The smallest details often make the biggest difference—from lighting and textures to furniture placement and material combinations.",
+
     }
   ];
 
@@ -49,8 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     root.innerHTML = `
       <div class="section-inner">
-        <p class="eyebrow">What We Do</p>
-        <h2>FULL-SERVICE DESIGN & CURATION</h2>
+        <p class="eyebrow">OUR PHILOSOPHY</p>
+        <h2>DESIGNING BERYOND APPEARANCE</h2>
         <div class="services-grid">
           ${services.map(buildServiceHtml).join("")}
         </div>
