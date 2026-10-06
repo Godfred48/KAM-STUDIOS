@@ -1,284 +1,394 @@
-/* =========================
-   ABOUT HERO (CINEMATIC)
-========================= */
-.about-hero {
-  position: relative;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 2rem;
-  background: var(--offblack);
-  overflow: hidden;
-}
+/* =========================================================
+   THE KWBN AESTHETIC – page styles
+   Uses the design tokens already defined in style.css
+   (--black, --offblack, --gold, --gold-dim, --gold-line,
+    --ivory, --charcoal, --serif, --sans)
+========================================================= */
 
-/* Background Image */
-.about-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../images/interior1.webp") center / cover no-repeat;
-  transform: scale(1.05);
-  z-index: 0;
-}
-
-/* Dark Overlay */
-.about-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(8, 8, 8, 0.85),
-    rgba(8, 8, 8, 0.75)
-  );
-  z-index: 1;
-}
-
-.about-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 850px;
-}
-
-.about-hero h2 {
-  font-family: var(--serif);
-  text-transform: uppercase;
-  font-size: 2.8rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 2rem;
-}
-
-.about-hero p {
-  color: rgba(245, 240, 232, 0.75);
-}
-
-
-.about-section .eyebrow{
-    color: var(--gold);
-}
-
-
-.about-hero .eyebrow{
-    color: var(--gold);
-}
-
-.mission-section .eyebrow{
-    color: var(--gold);
-}
-
-.ceo-section .eyebrow{
-    color: var(--gold);
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
-
-.about-section img,
-.ceo-section img {
-  border: 1px solid var(--gold-line);
-  transition: transform 0.6s ease;
-}
-
-.about-section img:hover,
-.ceo-section img:hover {
-  transform: scale(1.04);
-}
-
-/* =========================
-   MISSION SECTION
-========================= */
-
-.mission-section {
-  background: var(--black);
-}
-
-/* =========================
-   CEO SECTION
-========================= */
-
-.ceo-section {
-  background: var(--offblack);
-}
-
-.ceo-section p {
-  color: rgba(245, 240, 232, 0.75);
-}
-
-/* =========================
-   TYPOGRAPHY CONTROL
-========================= */
-
-.about-section h2,
-.mission-section h2,
-.ceo-section h2 {
-  font-family: var(--serif);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1.5rem;
-}
-
-.about-section p,
-.mission-section p,
-.ceo-section p {
-  font-family: var(--sans);
-  color: rgba(245, 240, 232, 0.75);
-}
-
-
-/* =========================
-   ABOUT SECTION
-========================= */
-
-.about-section img,
-.ceo-section img {
-  border: 1px solid var(--gold-line);
-  transition: transform 0.6s ease;
-}
-
-.about-section img:hover,
-.ceo-section img:hover {
-  transform: scale(1.04);
-}
-
-/* =========================
-   MISSION SECTION
-========================= */
-
-.mission-section {
-  background: var(--black);
-}
-
-/* =========================
-   CEO SECTION
-========================= */
-
-.ceo-section {
-  background: var(--offblack);
-}
-
-.ceo-section p {
-  color: rgba(245, 240, 232, 0.75);
-}
-
-/* =========================
-   TYPOGRAPHY CONTROL
-========================= */
-
-.about-section h2,
-.mission-section h2,
-.ceo-section h2 {
-  font-family: var(--serif);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 1.5rem;
-}
-
-.about-section p,
-.mission-section p,
-.ceo-section p {
-  font-family: var(--sans);
-  color: rgba(245, 240, 232, 0.75);
-}
-
-/* =========================
-   CEO QUOTE MARK
-========================= */
-
-.ceo-section .section-inner {
-  position: relative;
-}
-
-.ceo-section .section-inner::before {
-  content: "“";
-  position: absolute;
-  top: -40px;
-  left: -10px;
-  font-family: var(--serif);
-  font-size: 12rem;
-  color: var(--gold);
-  opacity: 0.06;
-  line-height: 1;
-  pointer-events: none;
-}
-
-/* =========================
-   SCROLL REVEAL (STAGGERED)
-========================= */
-
+/* ---------- Scroll reveal (toggled by your script.js) ---------- */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-.reveal.delay-1 {
-  transition-delay: 0.15s;
+/* ---------- Keyframes ---------- */
+@keyframes aesZoom   { from { transform: scale(1.14); } to { transform: scale(1); } }
+@keyframes aesRise   { to { transform: translateY(0); } }
+@keyframes aesFade   { to { opacity: 1; transform: none; } }
+@keyframes aesDraw   { to { transform: scaleX(1); } }
+@keyframes aesShine  { to { background-position: -200% 0; } }
+@keyframes aesDrift  { 0%, 100% { transform: translate(-8%, -6%); } 50% { transform: translate(8%, 6%); } }
+@keyframes aesScroll { 0% { transform: translateY(-100%); } 100% { transform: translateY(200%); } }
+@keyframes aesMarquee { to { transform: translateX(-50%); } }
+@keyframes aesParallax { to { transform: translateY(90px); opacity: 0; } }
+
+/* =========================
+   HERO
+========================= */
+.aes-hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 9rem 2rem 6rem;
+  text-align: center;
+  background: var(--black);
+  overflow: hidden;
 }
 
-.reveal.delay-2 {
-  transition-delay: 0.3s;
+.aes-hero-bg {
+  position: absolute;
+  inset: -4%;
+  background:
+    linear-gradient(to bottom, rgba(8, 8, 8, 0.8), rgba(8, 8, 8, 0.55) 50%, var(--black)),
+    url("../images/interior1.webp") center / cover no-repeat;
+  animation: aesZoom 22s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
 }
 
-.reveal.delay-3 {
-  transition-delay: 0.45s;
+/* slow drifting gold glow */
+.aes-hero::before {
+  content: "";
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  top: 10%;
+  left: 20%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.16), transparent 62%);
+  filter: blur(40px);
+  animation: aesDrift 16s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.aes-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.aes-hero .eyebrow { color: var(--gold); }
+
+.aes-title {
+  margin: 1.5rem 0 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 5.2rem);
+  line-height: 1.08;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ivory);
+}
+
+.aes-title .ln {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+}
+
+.aes-title .ln > span {
+  display: block;
+  transform: translateY(115%);
+  animation: aesRise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0.4s) forwards;
+}
+
+/* shimmering gold second line */
+.aes-title .gold > span {
+  background: linear-gradient(100deg, var(--gold) 20%, #f1dca0 45%, var(--gold) 70%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    aesRise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0.4s) forwards,
+    aesShine 6s linear 2s infinite;
+}
+
+.aes-line {
+  width: 120px;
+  margin: 2.2rem auto;
+  transform: scaleX(0);
+  animation: aesDraw 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) 1s forwards;
+}
+
+.aes-intro {
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: rgba(245, 240, 232, 0.78);
+}
+
+.aes-fade {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: aesFade 1s ease var(--d, 0s) forwards;
+}
+
+/* scroll cue */
+.aes-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  z-index: 2;
+  width: 1px;
+  height: 64px;
+  background: var(--gold-line);
+  overflow: hidden;
+}
+.aes-scroll span {
+  display: block;
+  width: 100%;
+  height: 50%;
+  background: var(--gold);
+  animation: aesScroll 2.2s ease-in-out infinite;
+}
+
+/* hero fades and drifts as you scroll (modern browsers only) */
+@supports (animation-timeline: scroll()) {
+  .aes-hero-content {
+    animation: aesParallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 80vh;
+  }
+}
+
+/* =========================
+   MARQUEE
+========================= */
+.aes-marquee {
+  overflow: hidden;
+  padding: 1.5rem 0;
+  background: var(--offblack);
+  border-block: 1px solid var(--gold-line);
+}
+
+.aes-track {
+  display: flex;
+  width: max-content;
+  animation: aesMarquee 34s linear infinite;
+}
+
+.aes-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--gold-line);
+  transition: color 0.4s ease;
+}
+.aes-track span::after {
+  content: "◆";
+  font-size: 0.45em;
+  color: var(--gold);
+  -webkit-text-stroke: 0;
+}
+.aes-track span:hover { color: var(--gold); }
+.aes-marquee:hover .aes-track { animation-play-state: paused; }
+
+/* =========================
+   PRINCIPLES
+========================= */
+.aes-principles {
+  padding: 7rem 0;
+  background: var(--black);
+}
+
+.aes-split {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.aes-side {
+  position: sticky;
+  top: 7rem;
+}
+.aes-side .eyebrow { color: var(--gold); }
+.aes-side h2 {
+  margin-bottom: 2rem;
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.aes-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--gold-line);
+}
+.aes-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.aes-frame::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid var(--gold-line);
+  pointer-events: none;
+  transition: inset 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.aes-frame:hover img { transform: scale(1.07); }
+.aes-frame:hover::after { inset: 26px; }
+
+/* ---------- Principle rows ---------- */
+.aes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aes-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2.8rem 1.25rem;
+  border-top: 1px solid var(--gold-dim);
+  overflow: hidden;
+}
+.aes-item:last-child { border-bottom: 1px solid var(--gold-dim); }
+
+/* gold line that draws across when the row is revealed */
+.aes-item::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s;
+}
+.aes-item.active::after { transform: scaleX(1); }
+
+/* warm sweep on hover */
+.aes-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--gold-dim), transparent 85%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.aes-item:hover::before { transform: scaleX(1); }
+
+.aes-item > * { position: relative; z-index: 1; }
+
+.aes-num {
+  font-family: var(--serif);
+  font-size: 2.6rem;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--gold);
+  transition: color 0.5s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.aes-item:hover .aes-num {
+  color: var(--gold);
+  transform: scale(1.08);
+}
+
+.aes-item h3 {
+  margin: 0 0 0.7rem;
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.4s ease;
+}
+.aes-item:hover h3 {
+  transform: translateX(10px);
+  color: var(--gold);
+}
+
+.aes-item p {
+  max-width: 46ch;
+  margin: 0;
+  font-family: var(--sans);
+  line-height: 1.7;
+  color: rgba(245, 240, 232, 0.75);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.05s;
+}
+.aes-item:hover p { transform: translateX(10px); }
+
+/* =========================
+   CTA
+========================= */
+.aes-cta {
+  padding: 8rem 2rem;
+  text-align: center;
+ }
+.aes-cta .eyebrow { color: var(--gold); }
+.aes-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.aes-cta p {
+  max-width: 48ch;
+  margin: 0 auto 2.2rem;
+  font-family: var(--sans);
+  color: rgba(245, 240, 232, 0.78);
+}
+.aes-line-static { width: 120px; margin: 1.8rem auto; }
+
+@media (min-width: 1025px) and (hover: hover) {
+  .aes-cta { background-attachment: scroll, fixed; } /* subtle parallax on desktop */
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-
-@media (max-width: 1024px) {
-  .about-hero h2 {
-    font-size: 2.3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-hero {
-    height: 70vh;
-  }
-
-  .about-hero h2 {
-    font-size: 1.9rem;
-  }
+@media (max-width: 900px) {
+  .aes-principles { padding: 4.5rem 0; }
+  .aes-split { grid-template-columns: 1fr; gap: 3rem; }
+  .aes-side { position: static; }
+  .aes-frame { aspect-ratio: 16 / 10; }
+  .aes-item { grid-template-columns: 3.6rem 1fr; padding: 2rem 0.5rem; }
+  .aes-num { font-size: 1.8rem; }
 }
 
 @media (max-width: 480px) {
-  .about-hero h2 {
-    font-size: 1.6rem;
-  }
+  .aes-hero { padding-top: 7rem; }
+  .aes-cta { padding: 5rem 1.5rem; }
 }
 
 /* =========================
-   RESPONSIVE
+   REDUCED MOTION
 ========================= */
+@media (prefers-reduced-motion: reduce) {
+  .aes-hero-bg,
+  .aes-hero::before,
+  .aes-track,
+  .aes-scroll span,
+  .aes-hero-content { animation: none !important; }
 
-@media (max-width: 1024px) {
-  .about-hero h2 {
-    font-size: 2.3rem;
-  }
-}
+  .aes-title .ln > span,
+  .aes-fade,
+  .aes-line { animation: none; opacity: 1; transform: none; }
 
-@media (max-width: 768px) {
-  .about-hero {
-    height: 70vh;
-  }
-
-  .about-hero h2 {
-    font-size: 1.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-hero h2 {
-    font-size: 1.6rem;
-  }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .aes-item::after { transform: scaleX(1); transition: none; }
 }
