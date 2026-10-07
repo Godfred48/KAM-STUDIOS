@@ -338,7 +338,12 @@
 .aes-cta {
   padding: 8rem 2rem;
   text-align: center;
+  background:
+    linear-gradient(to bottom, rgba(8, 8, 8, 0.9), rgba(8, 8, 8, 0.55) 50%, var(--black)),
+    url("../images/interior2.webp") center / cover no-repeat;
  }
+
+
 .aes-cta .eyebrow { color: var(--gold); }
 .aes-cta h2 {
   font-family: var(--serif);
@@ -391,4 +396,348 @@
 
   .reveal { opacity: 1; transform: none; transition: none; }
   .aes-item::after { transform: scaleX(1); transition: none; }
+}
+
+
+
+
+
+/* =========================================================
+   CEO PROFILE + PHILOSOPHY TIMELINE (About page)
+   Link AFTER about.css. Uses tokens from style.css.
+========================================================= */
+
+@keyframes phiFloat   { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes phiBreathe { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(8px, 8px); } }
+@keyframes phiPulse   { 0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.55); } 100% { box-shadow: 0 0 0 16px rgba(201, 168, 76, 0); } }
+@keyframes phiUp      { from { opacity: 0; transform: translateY(16px); } }
+@keyframes phiGrow    { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+/* =========================
+   PAGE FIXES
+========================= */
+/* clip (not hidden) so sticky columns work; sections already have their own padding */
+main { overflow: clip; }
+.aes-principles .section-inner,
+.aes-cta .section-inner { padding: 0; }
+
+/* =========================
+   CEO
+========================= */
+.phi-ceo { background: var(--offblack); }
+
+.phi-ceo-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.phi-ceo h2 {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.phi-ceo blockquote {
+  margin: 1.8rem 0 2.2rem;
+  padding-left: 1.6rem;
+  border-left: 1px solid var(--gold);
+  line-height: 1.9;
+  color: rgba(245, 240, 232, 0.8);
+}
+
+.phi-sign { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.phi-name {
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
+  padding-bottom: 0.7rem;
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+.phi-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s;
+}
+.phi-ceo.active .phi-name::after { transform: scaleX(1); }
+
+.phi-role {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.7);
+}
+
+/* ---------- Portrait ---------- */
+.phi-portrait {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 420px;
+  margin: 0;
+  justify-self: center;
+  animation: phiFloat 8s ease-in-out infinite;
+}
+.phi-portrait::before {           /* offset gold outline that gently breathes */
+  content: "";
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid var(--gold-line);
+  z-index: -1;
+  animation: phiBreathe 6s ease-in-out infinite;
+}
+.phi-portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1b1b1b, #0c0c0c);
+  border: 1px solid var(--gold-line);
+}
+.phi-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  filter: grayscale(0.25) contrast(1.05);
+  transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease;
+}
+.phi-portrait-frame:hover img { transform: scale(1.05); filter: none; }
+
+/* =========================
+   PHILOSOPHY
+========================= */
+.phi-section { background: var(--black); }
+.phi-section .section-inner { padding: 7rem 0; }
+
+.phi-head { text-align: center; }
+.phi-head .eyebrow { color: var(--gold); }
+.phi-head h2 { font-size: clamp(1.6rem, 4vw, 3rem); margin-bottom: 0; }
+.phi-intro {
+  max-width: 50ch;
+  margin: 0 auto;
+  color: rgba(245, 240, 232, 0.78);
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Timeline ---------- */
+.phi-timeline {
+  position: relative;
+  margin: 5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.phi-timeline::before,
+.phi-timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+}
+.phi-timeline::before { background: var(--gold-dim); }
+.phi-timeline::after {            /* gold line that grows as you scroll */
+  background: var(--gold);
+  transform-origin: top;
+  transform: scaleY(0);
+}
+@supports (animation-timeline: view()) {
+  .phi-timeline::after {
+    animation: phiGrow linear both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 65%;
+  }
+}
+@supports not (animation-timeline: view()) {
+  .phi-timeline::after { transform: none; opacity: 0.5; }
+}
+
+.phi-step {
+  position: relative;
+  display: flex;
+  margin-bottom: 4.5rem;
+}
+.phi-step:last-child { margin-bottom: 0; }
+.phi-step:nth-child(even) { justify-content: flex-end; }
+
+/* slide in from alternating sides */
+.phi-step.reveal { transform: translateX(-60px); }
+.phi-step:nth-child(even).reveal { transform: translateX(60px); }
+.phi-step.reveal.active { transform: none; }
+
+.phi-dot {
+  position: absolute;
+  top: 2.4rem;
+  left: 50%;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--black);
+  transition: background 0.6s ease 0.4s;
+}
+.phi-step.active .phi-dot {
+  background: var(--gold);
+  animation: phiPulse 2.4s ease-out 0.8s infinite;
+}
+
+/* giant outline number on the empty side */
+.phi-ghost {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: calc(50% - 4rem);
+  margin-top: -0.55em;
+  font-family: var(--serif);
+  font-size: clamp(6rem, 15vw, 12rem);
+  line-height: 1;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--gold-line);
+  opacity: 0.55;
+  pointer-events: none;
+  animation: phiFloat 7s ease-in-out infinite;
+}
+.phi-step:nth-child(even) .phi-ghost { right: auto; left: 0; }
+
+/* ---------- Card ---------- */
+.phi-card {
+  position: relative;
+  overflow: hidden;
+  width: calc(50% - 3rem);
+  padding: 2.4rem 2.2rem;
+  background: var(--offblack);
+  border: 1px solid var(--gold-dim);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease;
+}
+.phi-card::before {               /* warm sweep on hover */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, var(--gold-dim), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.phi-card::after {                /* gold bar that draws along the bottom */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.phi-card:hover { transform: translateY(-8px); border-color: var(--gold-line); }
+.phi-card:hover::before { opacity: 1; }
+.phi-card:hover::after { transform: scaleX(1); }
+.phi-card > * { position: relative; z-index: 1; }
+
+.phi-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+.phi-card h3 {
+  margin: 0.6rem 0 1.2rem;
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ivory);
+}
+.phi-lead {
+  margin-bottom: 1rem;
+  color: var(--ivory);
+  line-height: 1.7;
+}
+.phi-detail {
+  margin-bottom: 1.4rem;
+  font-size: 0.95rem;
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.phi-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.phi-tags li {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--gold-line);
+  border-radius: 999px;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+.phi-tags li:hover { background: var(--gold); color: var(--black); }
+
+/* tags + text rise in one after another */
+.phi-step.active .phi-lead   { animation: phiUp 0.8s ease 0.35s backwards; }
+.phi-step.active .phi-detail { animation: phiUp 0.8s ease 0.5s backwards; }
+.phi-step.active .phi-tags li { animation: phiUp 0.7s ease backwards; }
+.phi-step.active .phi-tags li:nth-child(1) { animation-delay: 0.65s; }
+.phi-step.active .phi-tags li:nth-child(2) { animation-delay: 0.77s; }
+.phi-step.active .phi-tags li:nth-child(3) { animation-delay: 0.89s; }
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .phi-ceo-grid { grid-template-columns: 1fr; gap: 4rem; }
+  .phi-portrait { max-width: 340px; }
+  .phi-section .section-inner { padding: 4.5rem 0; }
+
+  .phi-timeline::before,
+  .phi-timeline::after { left: 7px; }
+  .phi-dot { left: 7px; }
+  .phi-ghost { display: none; }
+
+  .phi-step,
+  .phi-step:nth-child(even) { justify-content: flex-end; }
+  .phi-card { width: calc(100% - 2.4rem); padding: 2rem 1.5rem; }
+
+  .phi-step.reveal,
+  .phi-step:nth-child(even).reveal { transform: translateX(40px); }
+  .phi-step.reveal.active { transform: none; }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  .phi-portrait,
+  .phi-portrait::before,
+  .phi-ghost,
+  .phi-step.active .phi-dot,
+  .phi-timeline::after { animation: none !important; }
+  .phi-timeline::after { transform: none; }
+  .phi-step.reveal,
+  .phi-step:nth-child(even).reveal { transform: none; }
+  .phi-step.active .phi-lead,
+  .phi-step.active .phi-detail,
+  .phi-step.active .phi-tags li { animation: none; }
+  .phi-name::after { transform: scaleX(1); transition: none; }
 }

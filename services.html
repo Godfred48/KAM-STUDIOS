@@ -3,28 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KWBN Interiors is a luxury interior design studio crafting refined residential environments defined by detail, proportion, and timeless materiality.">
+  <meta name="description" content="Residential and commercial interior design, space planning, 3D visualization, furniture and décor selection, renovation and project coordination by KWBN Interiors.">
   <meta name="author" content="KWBN Interiors">
-  <meta property="og:title" content="KWBN INTERIORS">
-  <meta property="og:description" content="KWBN Interiors is a luxury interior design studio crafting refined residential environments defined by detail, proportion, and timeless materiality.">
-  <meta property="og:image" content="https://godfred48.github.io/KAM-STUDIOS/images/logo.webp">       
-  <meta property="og:url" content="https://godfred48.github.io/KAM-STUDIOS/images/logo.webp">  
-  <link rel="icon" href="./images/logo.webp" type="image/webp" >
+  <meta property="og:title" content="Services | KWBN INTERIORS">
+  <meta property="og:description" content="From initial spatial planning to final installation, KWBN Interiors delivers refined environments defined by proportion, material integrity, and enduring elegance.">
+  <meta property="og:image" content="https://godfred48.github.io/KAM-STUDIOS/images/logo.webp">
+  <link rel="icon" href="./images/logo.webp" type="image/webp">
 
-  <title>KWBN INTERIORS | Luxury Interior Design Studio</title>
+  <title>Services | KWBN INTERIORS</title>
 
-  <!-- Bootstrap (Structural Only) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-  <!-- Google Fonts (Required Tokens) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&family=Arimo:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="./style/style.css">
   <link rel="stylesheet" href="./style/footer.css">
   <link rel="stylesheet" href="./style/services.css">
@@ -32,81 +25,194 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
   <div class="header-inner">
-
     <div class="logo">
       <img src="./images/logo.webp" alt="KWBN INTERIORS Logo" width="60" height="60">
       <h1>KWBN INTERIORS</h1>
     </div>
-
     <nav class="largeNav" id="desktopNav">
       <ul>
         <li><a href="./index.html">Home</a></li>
-        <li><a href="./about-us.html">About</a></li>
+        <li><a href="./about.html">About</a></li>
         <li><a href="./services.html">Services</a></li>
         <li><a href="./portfolio.html">Portfolio</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
     </nav>
-
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-
   </div>
 </header>
 
 <nav class="mobileNav" id="mobileNav">
   <ul>
     <li><a href="./index.html">Home</a></li>
-    <li><a href="./about-us.html">About</a></li>
+    <li><a href="./about.html">About</a></li>
     <li><a href="./services.html">Services</a></li>
     <li><a href="./portfolio.html">Portfolio</a></li>
     <li><a href="./contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ================= MAIN ================= -->
 <main>
 
   <!-- HERO -->
-  <section class="services-hero">
-    <div class="services-hero-content">
-      <p class="eyebrow">Our Expertise</p>
-      <h2>COMPREHENSIVE DESIGN SERVICES</h2>
-      <div class="gold-divider"></div>
-      <p>
-        From initial spatial planning to final installation,
-        KWBN Interiors delivers refined environments defined
-        by proportion, material integrity, and enduring elegance.
+  <section class="svc-hero">
+    <div class="svc-hero-bg"></div>
+    <div class="svc-hero-content">
+      <p class="eyebrow svc-fade" style="--d:.2s">OUR UNIQUE SERVICES</p>
+      <h2 class="svc-title">
+        <span class="ln"><span style="--d:.4s">Comprehensive</span></span>
+        <span class="ln gold"><span style="--d:.65s">Design Services</span></span>
+      </h2>
+      <div class="gold-divider svc-line"></div>
+      <p class="svc-intro svc-fade" style="--d:1.5s">
+        From initial spatial planning to final installation, KWBN Interiors delivers
+        refined environments defined by proportion, material integrity, and enduring elegance.
       </p>
+    </div>
+    <a href="#services" class="svc-scroll" aria-label="Scroll to services"><span></span></a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="svc-marquee" aria-hidden="true">
+    <div class="svc-track">
+      <span>Residential</span><span>Commercial</span><span>Space Planning</span><span>3D Visualization</span><span>Décor</span><span>Renovation</span><span>Coordination</span>
+      <span>Residential</span><span>Commercial</span><span>Space Planning</span><span>3D Visualization</span><span>Décor</span><span>Renovation</span><span>Coordination</span>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <section class="svc-what" id="services">
+    <div class="section-inner">
+
+      <header class="svc-head reveal">
+        <p class="eyebrow">Services</p>
+        <h2>WHAT WE DO</h2>
+        <div class="gold-divider svc-line-static"></div>
+      </header>
+
+      <div class="svc-grid reveal">
+
+        <article class="svc-card svc-lg" style="--i:0; --bg:url('./images/interior2.webp')">
+          <span class="svc-no">01</span>
+          <h3>Residential Interior Design</h3>
+          <p>Complete interior concepts for apartments, homes, villas and private residences.</p>
+          <span class="svc-more" aria-hidden="true">→</span>
+        </article>
+
+        <article class="svc-card svc-lg" style="--i:1; --bg:url('./images/interior4.webp')">
+          <span class="svc-no">02</span>
+          <h3>Commercial Interior Design</h3>
+          <p>Sophisticated environments for offices, retail spaces, hospitality and businesses.</p>
+          <span class="svc-more" aria-hidden="true">→</span>
+        </article>
+
+        <article class="svc-card svc-sm" style="--i:2">
+          <span class="svc-no">03</span>
+          <h3>Space Planning</h3>
+          <p>Strategic layouts that maximize functionality, movement and visual balance.</p>
+          <span class="svc-more" aria-hidden="true">→</span>
+        </article>
+
+        <article class="svc-card svc-sm" style="--i:3">
+          <span class="svc-no">04</span>
+          <h3>3D Visualization</h3>
+          <p>Photorealistic visualizations that allow clients to experience the proposed space before construction or installation.</p>
+          <span class="svc-more" aria-hidden="true">→</span>
+        </article>
+
+        <article class="svc-card svc-sm" style="--i:4">
+          <span class="svc-no">05</span>
+          <h3>Furniture &amp; Décor Selection</h3>
+          <p>Curating furniture, lighting, artwork, accessories and decorative elements that complete the design.</p>
+          <span class="svc-more" aria-hidden="true">→</span>
+        </article>
+
+        <article class="svc-card svc-lg" style="--i:5; --bg:url('./images/portfolio/bed3.webp')">
+          <span class="svc-no">06</span>
+          <h3>Renovation &amp; Transformation</h3>
+          <p>Reimagining existing spaces through thoughtful redesign, finishes, lighting and furniture.</p>
+          <span class="svc-more" aria-hidden="true">→</span>
+        </article>
+
+        <article class="svc-card svc-lg" style="--i:6; --bg:url('./images/interior1.webp')">
+          <span class="svc-no">07</span>
+          <h3>Project Coordination</h3>
+          <p>Supporting the transition from approved concept to physical execution.</p>
+          <span class="svc-more" aria-hidden="true">→</span>
+        </article>
+
+      </div>
     </div>
   </section>
 
-  <!-- SERVICES (Dynamic) -->
-  <section id="services-editorial-root"></section>
+  <!-- PROCESS -->
+  <section class="svc-process">
+    <div class="section-inner">
+
+      <header class="svc-head center reveal">
+        <p class="eyebrow">The Process</p>
+        <h2>FROM VISION TO REALITY</h2>
+        <div class="gold-divider svc-line-static"></div>
+      </header>
+
+      <ol class="svc-flow">
+
+        <li class="svc-step reveal">
+          <span class="svc-sno">01</span>
+          <div><h3>Consultation</h3><p>We begin by understanding your lifestyle, needs, preferences, budget and vision.</p></div>
+        </li>
+        <li class="svc-arrow" aria-hidden="true"></li>
+
+        <li class="svc-step reveal">
+          <span class="svc-sno">02</span>
+          <div><h3>Concept</h3><p>We develop the creative direction through inspiration, moodboards, colours, materials and references.</p></div>
+        </li>
+        <li class="svc-arrow" aria-hidden="true"></li>
+
+        <li class="svc-step reveal">
+          <span class="svc-sno">03</span>
+          <div><h3>Space Planning</h3><p>Layouts are carefully developed to achieve the right balance between functionality and aesthetics.</p></div>
+        </li>
+        <li class="svc-arrow" aria-hidden="true"></li>
+
+        <li class="svc-step reveal">
+          <span class="svc-sno">04</span>
+          <div><h3>3D Visualization</h3><p>The concept is translated into detailed 3D visuals, allowing you to see the proposed space before implementation.</p></div>
+        </li>
+        <li class="svc-arrow" aria-hidden="true"></li>
+
+        <li class="svc-step reveal">
+          <span class="svc-sno">05</span>
+          <div><h3>Selection &amp; Refinement</h3><p>Furniture, lighting, finishes, materials and accessories are selected and refined.</p></div>
+        </li>
+        <li class="svc-arrow" aria-hidden="true"></li>
+
+        <li class="svc-step reveal">
+          <span class="svc-sno">06</span>
+          <div><h3>Execution</h3><p>The approved design moves from concept to reality with attention to quality, detail and consistency.</p></div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
 
   <!-- CTA -->
-  <section class="cta-section reveal">
+  <section class="svc-cta reveal">
     <div class="section-inner center">
+      <p class="eyebrow">Let’s Begin</p>
       <h2>BEGIN YOUR PROJECT WITH INTENTION</h2>
-      <p>
-        We accept a limited number of commissions annually
-        to ensure complete creative focus.
-      </p>
-      <a href="./contact.html" class="btn-primary">
-        Schedule a Consultation
-      </a>
+      <div class="gold-divider svc-line-static"></div>
+      <p>We accept a limited number of commissions annually to ensure complete creative focus.</p>
+      <a href="./contact.html" class="btn-primary">Schedule a Consultation</a>
     </div>
   </section>
 
 </main>
 
-<!-- ================= FOOTER================= -->
 <footer>
   <div class="footer-content">
 
@@ -116,68 +222,39 @@
         <h1>KWBN INTERIORS</h1>
       </div>
       <h2>WANT TO HAVE A CLASSIC INTERIOR?</h2>
-      <button class="footer-btn1">
-        <a href="./contact.html">Get Started</a>
-      </button>
+      <button class="footer-btn1"><a href="./contact.html">Get Started</a></button>
     </div>
 
     <div class="footer-column">
       <h3>Contact Info</h3>
-
-      <div class="contact-item">
-        <h4>Call us at:</h4>
-        <p>+233 5418 33535</p>
-      </div>
-
-      <div class="contact-item">
-        <h4>Our Location:</h4>
-        <p>Accra, Ghana</p>
-      </div>
-
+      <div class="contact-item"><h4>Call us at:</h4><p>+233 5418 33535</p></div>
+      <div class="contact-item"><h4>Our Location:</h4><p>Accra, Ghana</p></div>
       <div class="contact-item">
         <h4>Email us at:</h4>
-        <p>
-          <a href="mailto:kwbninteriors@gmail.com">
-            kwbninteriors@gmail.com
-          </a>
-        </p>
+        <p><a href="mailto:kwbninteriors@gmail.com">kwbninteriors@gmail.com</a></p>
       </div>
     </div>
 
     <div class="footer-column">
       <h3>Subscribe to Our Newsletter</h3>
-
       <form class="newsletter-form">
         <input type="email" placeholder="Enter your email address" required>
         <button class="submit-btn" type="submit">Subscribe</button>
       </form>
-
       <div class="social-icons">
-        <a href="https://snapchat.com/t/bxiz3MfT"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Snapchat">
-          <i class="bi bi-snapchat"></i>
-        </a>
-
-        <a href="https://www.instagram.com/"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Instagram">
-          <i class="bi bi-instagram"></i>
-        </a>
+        <a href="https://snapchat.com/t/bxiz3MfT" target="_blank" rel="noopener noreferrer" aria-label="Snapchat"><i class="bi bi-snapchat"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
       </div>
     </div>
 
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 KWBN INTERIORS. All Rights Reserved.</p>
   </div>
 </footer>
 
-<!-- Scripts -->
 <script src="./script/script.js" defer></script>
 <script src="./script/hamburger.js" defer></script>
-<script src="./script/services.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
