@@ -578,7 +578,7 @@ main { overflow: clip; }
   text-align: center;
   background:
     linear-gradient(rgba(8, 8, 8, 0.82), rgba(8, 8, 8, 0.93)),
-    url("../images/portfolio/bed3.webp") center / cover no-repeat;
+    url("../images/New\ pictures/im16.webp") center / cover no-repeat;
 }
 .pf-cta-inner { max-width: 700px; margin: auto; }
 .pf-cta .eyebrow { color: var(--gold); }
