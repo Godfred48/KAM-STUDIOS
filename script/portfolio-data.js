@@ -99,9 +99,9 @@ const PORTFOLIO_PROJECTS = [
 
     layout: "hero",
     gallery: [
-      { src: "./images/portfolio/bed3.webp", alt: "Open living area of the Contemporary Apartment", caption: "Living area" },
-      { src: "./images/interior4.webp",      alt: "Bedroom with ambient lighting",                 caption: "Bedroom" },
-      { src: "./images/interior1.webp",      alt: "TV feature wall and storage",                   caption: "TV feature wall" }
+      { src: "./images/New pictures/im1.webp", alt: "Open living area of the Contemporary Apartment", caption: "Living area" },
+      { src: "./images/New pictures/im10.webp",      alt: "Bedroom with ambient lighting",                 caption: "Bedroom" },
+      { src: "./images/New pictures/im9.webp",      alt: "TV feature wall and storage",                   caption: "TV feature wall" }
     ]
   },
 
@@ -132,8 +132,8 @@ const PORTFOLIO_PROJECTS = [
 
     layout: "duo",
     gallery: [
-      { src: "./images/interior3.webp", alt: "Reception of the Executive Commercial Space", caption: "Reception" },
-      { src: "./images/hero2.webp",     alt: "Waiting area and workspaces",                 caption: "Waiting area" }
+      { src: "./images/New pictures/im11.webp", alt: "Reception of the Executive Commercial Space", caption: "Reception" },
+      { src: "./images/New pictures/im12.webp",     alt: "Waiting area and workspaces",                 caption: "Workspace" }
     ]
   }
 
